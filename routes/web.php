@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('inicio', function () {
     return view('dashboard.index');
+});*/
+Route::resource('login', 'LogController');
+Route::post('ingresar', ['as' => 'login.ingresar', 'uses' => 'LogController@ingresar']);
+//Route::get('/login', array('as' => 'user.loginform', 'uses' => 'Auth\LoginController@showLoginForm'));
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index');
 });
