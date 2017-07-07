@@ -28,15 +28,27 @@
             @endif
             {{ Form::open(['route'=>'login.ingresar', 'method'=>'post']) }}
                 <div class="form-group has-feedback">
-                    {{ Form::text('codigo', null, ['class' => 'form-control', 'placeholder' => 'Código de registro']) }}
+                    {{
+                        Form::text(
+                            'registro_id',
+                            null,
+                            ['class' => 'form-control', 'placeholder' => 'Código de registro', 'required']
+                        )
+                    }}
                     <span class="glyphicon glyphicon-bookmark form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    {{ Form::text('usuario', null, ['class' => 'form-control', 'placeholder' => 'Usuario']) }}
+                    {{
+                        Form::text(
+                            'dni',
+                            null,
+                            ['class' => 'form-control', 'placeholder' => 'Usuario', 'required']
+                        )
+                    }}
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Contraseña">
+                    <input type="password" class="form-control" placeholder="Contraseña" required>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">
