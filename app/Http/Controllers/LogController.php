@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use Auth;
-//use Session;
-//use Redirect;
 
 class LogController extends Controller
 {
@@ -17,16 +15,17 @@ class LogController extends Controller
 
     public function ingresar(LoginRequest $request) 
     {
+        $registro = \App\Registro::where('codigo', $request->codigo)->first();
+        $registro_id = $registro ? $registro->id : 0000;
         $data = [
-            'codigo' => $request->codigo,
-            'usuario' => $request->usuario,
+            'registro_id' => $registro_id,
+            'dni' => $request->dni,
             'password' => $request->password
         ];
 
-        if(Auth::attempt($data)) {
-            return redirect()->route('/');
+        if(Auth::attempt($data)){
+            return redirect()->route('inicio');
         }
-        //Session::flash('message-error','Los datos ingresados son incorrectos');
-        return redirect()->route('login.index')->withErrors('Datos incorrectos');
+        return redirect()->route('login')->withErrors('Datos incorrectos.');
     }
 }

@@ -24,8 +24,8 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'codigo' => 'required|integer|between:17004,17011',
-            'usuario' => 'required',
+            'codigo' => 'required|integer',
+            'dni' => 'required',
             'password' => 'required'
         ];
     }
