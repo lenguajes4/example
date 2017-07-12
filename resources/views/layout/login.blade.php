@@ -30,7 +30,7 @@
                 <div class="form-group has-feedback">
                     {{
                         Form::text(
-                            'registro_id',
+                            'codigo',
                             null,
                             ['class' => 'form-control', 'placeholder' => 'Código de registro', 'required']
                         )
@@ -48,7 +48,7 @@
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Contraseña" required>
+                    <input name="password" type="password" class="form-control" placeholder="Contraseña" required>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">

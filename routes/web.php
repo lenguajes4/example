@@ -14,5 +14,5 @@
 Route::get('login', ['as' => 'login', 'uses' => 'LogController@index']);
 Route::post('ingresar', ['as' => 'login.ingresar', 'uses' => 'LogController@ingresar']);
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', 'HomeController@index');
+    Route::get('/', ['as' => 'inicio', 'uses' => 'HomeController@index']);
 });
