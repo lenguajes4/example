@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call('RolesTableSeeder');
         $this->call('RegistrosTableSeeder');
         $this->call('UsuariosTableSeeder');
+        $this->call('ProvinciasTableSeeder');
 
         Schema::enableForeignKeyConstraints();
     }
